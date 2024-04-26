@@ -114,6 +114,8 @@ class BlackjackGame:
               print(f"Total value: {self.player_hand.value}")
           elif action == 's':
               break
+          else:
+            print("Enter h/s")
 
     def dealer_turn(self):
       print("\nDealer's turn:")
@@ -156,5 +158,22 @@ class BlackjackGame:
             if self.is_playing:
                 self.dealer_turn()
 
+    def play_again(self):
+      while True:
+          answer = input("\nDo you want to play again? (y/n): ").lower()
+          if answer == 'y':
+              os.system('cls' if os.name == 'nt' else 'clear')
+              self.deck = Deck()
+              self.player_hand = Hand()
+              self.dealer_hand = Hand()
+              self.is_playing = True
+              self.play()
+          elif answer == 'n':
+              print("Thanks for playing!")
+              break
+          else:
+              print("Please enter 'y' or 'n'.")
+
 game = BlackjackGame()
 game.play()
+game.play_again()
