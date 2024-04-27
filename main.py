@@ -133,6 +133,7 @@ class BlackjackGame:
           self.is_playing = False
       else:
           print("You win!")
+          self.is_playing = False
 
     def play(self):
         print("▀█████████▄   ▄█          ▄████████  ▄████████    ▄█   ▄█▄      ▄█    ▄████████  ▄████████    ▄█   ▄█▄ ")
